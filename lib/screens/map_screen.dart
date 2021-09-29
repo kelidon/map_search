@@ -77,6 +77,7 @@ class _MyHomePageState extends State<MapScreen> {
 
     Hive.openBox("search").then((value) {
       if (value.isNotEmpty) {
+        searchBar.isSearching.value = true;
         SearchResult lastSearch = value.get('last_search');
 
         setLocation(lastSearch);
